@@ -13,9 +13,7 @@ export class App extends Component {
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
   ],
   filter: '',
-  name: '',
-  number: ''
-}
+  }
 
   addContact = newContact => {
     const { contacts } = this.state
@@ -47,16 +45,10 @@ export class App extends Component {
   }
 
   deleteContactItem = contactId => {
-    this.setState(prevState => (
-  {contacts: prevState.contacts.filter(contact => contact.id !== contactId)}
-))
-  }
-
-  // deleteQuizItem = quizId => {
-  //   this.setState(prevState => ({
-  //     quizItems: prevState.quizItems.filter(quiz => quiz.id !== quizId),
-  //   }));
-  // };
+   this.setState(prevState => (
+    {contacts: prevState.contacts.filter(contact => contact.id !== contactId)}
+    ))
+  } 
  
    render() {
      const { filter } = this.state;
@@ -71,8 +63,6 @@ export class App extends Component {
       <ContactList items={visibleItems}
         filteredContacts={filteredContacts}
         onDelete={this.deleteContactItem } />
-      
-    </>
+     </>
   }
-
 }
